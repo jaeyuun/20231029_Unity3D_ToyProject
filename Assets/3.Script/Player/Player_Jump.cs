@@ -14,12 +14,12 @@ public class Player_Jump : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rigidbody.AddForce(1f, 0f, 0f);
+        //rigidbody.AddForce(1f, 0f, 0f);
 
         if (Input.GetButton("Jump"))
         {
             Debug.Log("มกวม");
-            rigidbody.AddForce(1f, Jump_P, 0f);
+            rigidbody.AddForce(0f, Jump_P, 0f);
 
         }
     }
