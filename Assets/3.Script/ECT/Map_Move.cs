@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class Map_Move : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private float position_X;
+    private void FixedUpdate()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        position_X -= 0.1f;
+        transform.position = new Vector3(position_X, 0f, 0f);
     }
 }
