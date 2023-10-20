@@ -16,10 +16,10 @@ public class Player_Jump : MonoBehaviour
     {
         //rigidbody.AddForce(1f, 0f, 0f);
 
-        if (Input.GetButton("Jump"))
+        if (Input.GetButton("Jump"))//스페이스키 입력시
         {
             Debug.Log("점프");
-            rigidbody.AddForce(0f, Jump_P, 0f);
+            rigidbody.AddForce(0f, Jump_P, 0f);//Jump_P만큼 힘을 준다
 
         }
     }
