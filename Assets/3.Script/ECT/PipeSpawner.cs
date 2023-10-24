@@ -5,10 +5,9 @@ using UnityEngine;
 public class PipeSpawner : MonoBehaviour
 {
     public GameObject pipePrefab;
-    //public GameObject itmePrefab;
     public float spawnRate = 1f;
     public int minY, maxY;
-
+    [SerializeField] private GameObject plyaer;//플레이어 값 가져오기
     private float timer = 0f;
 
     void Update()
@@ -17,12 +16,17 @@ public class PipeSpawner : MonoBehaviour
 
         if (timer >= spawnRate)
         {
+            
             int randomY = Random.Range(minY, maxY);
-            Instantiate(pipePrefab, new Vector3(transform.position.x*-50f, randomY, 0), Quaternion.identity);
-            //아이템 추가시에 생성
-            //Instantiate(itmePrefab, new Vector3(transform.position.x*-100f, randomY, 0), Quaternion.identity);
+            Instantiate(pipePrefab, new Vector3(Player_Posx(plyaer.transform.position) + 10f, randomY, 0), Quaternion.identity);
             timer = 0f;
             
         }
     }
+    //플레이어 x위치값을 반환하는 메소드
+    public float Player_Posx(Vector3 player)
+    {
+        return player.x;//플레이어 포지션 x값을 반환
+    }
+    //20231024 김민호
 }
