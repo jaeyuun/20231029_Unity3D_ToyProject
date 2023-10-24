@@ -19,7 +19,8 @@ public class PipeSpawner : MonoBehaviour
         {
             int randomY = Random.Range(minY, maxY);
             Instantiate(pipePrefab, new Vector3(transform.position.x*-2f, randomY, 0), Quaternion.identity);
-            Instantiate(itmePrefab, new Vector3(transform.position.x*-100f, randomY, 0), Quaternion.identity);
+            //아이템 추가시에 생성
+            //Instantiate(itmePrefab, new Vector3(transform.position.x*-100f, randomY, 0), Quaternion.identity);
             timer = 0f;
             
         }
