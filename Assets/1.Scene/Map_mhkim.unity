@@ -502,6 +502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pipePrefab: {fileID: 478025727973198286, guid: af1cee16da4232349b54ffb42df8370a, type: 3}
+  itmePrefab: {fileID: 345399501401545802, guid: b5c57b902bf10d4429edf733aa3d69c2, type: 3}
   spawnRate: 2
   minY: -3
   maxY: 3
