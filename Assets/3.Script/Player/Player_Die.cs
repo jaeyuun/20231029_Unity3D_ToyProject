@@ -8,6 +8,7 @@ public class Player_Die : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Wall"))//Wall Tag Á¢ÃË½Ã
         {
+            Die();
             Debug.Log("Á×À½");
             gameObject.SetActive(false);//Player ºñÈ°¼ºÈ­
         }

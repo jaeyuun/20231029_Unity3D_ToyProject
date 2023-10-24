@@ -18,7 +18,7 @@ public class Player_Jump : MonoBehaviour
 
         if (Input.GetButton("Jump"))//스페이스키 입력시
         {
-            Debug.Log("점프");
+           
             rigidbody.AddForce(0f, Jump_P, 0f);//Jump_P만큼 힘을 준다
 
         }

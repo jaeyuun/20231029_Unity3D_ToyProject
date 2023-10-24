@@ -355,12 +355,59 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503323482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40, y: 0.7024195, z: 0}
+  m_LocalPosition: {x: 7.08, y: 0.7024195, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &656246229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 656246230}
+  - component: {fileID: 656246231}
+  m_Layer: 0
+  m_Name: PipeSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &656246230
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656246229}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1403632331388743116}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &656246231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656246229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cdbb9bee41f1b6479d2a18f3147703d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pipePrefab: {fileID: 7901770097505558708, guid: 52ea36e635e8ae94b894fd4f1f88b328, type: 3}
+  spawnRate: 1
+  minY: 0
+  maxY: 0
 --- !u!1 &890750454
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,7 +1004,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1403632331388743116}
   - component: {fileID: 1403632331388743117}
-  - component: {fileID: 1403632331388743115}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -965,22 +1011,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1403632331388743115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1403632331388743114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cdbb9bee41f1b6479d2a18f3147703d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pipePrefab: {fileID: 7901770097505558708, guid: 52ea36e635e8ae94b894fd4f1f88b328, type: 3}
-  spawnRate: 2
-  minY: -5
-  maxY: 5
 --- !u!4 &1403632331388743116
 Transform:
   m_ObjectHideFlags: 0
@@ -994,6 +1024,7 @@ Transform:
   m_Children:
   - {fileID: 1403632330818520888}
   - {fileID: 1403632330875143162}
+  - {fileID: 656246230}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1862,7 +1893,6 @@ GameObject:
   - component: {fileID: 5411551631415214226}
   - component: {fileID: 5411551631415214225}
   - component: {fileID: 5411551631415214229}
-  - component: {fileID: 5411551631415214230}
   m_Layer: 0
   m_Name: LOVEDUCK
   m_TagString: Player
@@ -1884,7 +1914,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 10
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!136 &5411551631415214226
 CapsuleCollider:
@@ -1940,18 +1970,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &5411551631415214230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5411551631415214224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ec7e5ef85553924a96f5e2d91d589f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &5411551631415514124
 Transform:
   m_ObjectHideFlags: 0
