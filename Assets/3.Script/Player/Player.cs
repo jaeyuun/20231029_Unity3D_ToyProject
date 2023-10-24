@@ -4,22 +4,23 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // private SpriteRenderer spriteRenderer;
+   
 
-    private BoxCollider boxCollider;
+    private CapsuleCollider capsuleCollider;
     private Rigidbody rigid;
-    private Material playerMaterial;
-    private GameManager gameManager;
+    private Animator animator;
+
+  
+   
     private float originalPlayer;
 
     private void Start()
     {
-     
-        boxCollider = GetComponent<BoxCollider>();
+      
+        capsuleCollider  = GetComponent<CapsuleCollider>();
         rigid = GetComponent<Rigidbody>();
-        gameManager = GetComponent<GameManager>();
-        playerMaterial = GetComponent<MeshRenderer>().material;
-        //map_Move = GetComponent<Map_Move>();
+        animator = GetComponent<Animator>();
+
         originalPlayer = transform.localScale.x;
     }
     private void OnTriggerEnter(Collider other)
@@ -33,10 +34,13 @@ public class Player : MonoBehaviour
             {
 
                 Debug.Log("충돌");
-               
 
-                playerMaterial.color = new Color(255, 255, 0, 255);
-                boxCollider.enabled = false;
+
+
+                //Setbool로 walk가 true;
+
+                rigid.isKinematic = true;
+                capsuleCollider.enabled = false;
                 //rigid.AddForce(Vector3.right * 25, ForceMode.Impulse);
 
 
@@ -50,7 +54,7 @@ public class Player : MonoBehaviour
 
                 transform.localScale = new Vector3(originalPlayer * 3f, originalPlayer * 3f, originalPlayer * 3f);
 
-                StartCoroutine(RestoreColor(1f));
+                StartCoroutine(RestoreColor(2f));
                 Debug.Log("복귀");
 
             }
@@ -65,11 +69,13 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(delay); // 지연
 
-        // 플레이어 색상을 복원
-        playerMaterial.color = new Color(255, 0, 0, 255); // 알파 값을 1로 설정하여 투명 상태 해제
+        //Setbool로  walk가 false;
 
+        //SetTrigger idle로 true;
+
+        rigid.isKinematic = false;
         // 다른 복원 작업 수행
-        boxCollider.enabled = true;
+        capsuleCollider.enabled = true;
         Debug.Log("돌아왔나?");
         // 다른 작업 수행 가능
         transform.localScale = new Vector3(originalPlayer, originalPlayer, originalPlayer);
