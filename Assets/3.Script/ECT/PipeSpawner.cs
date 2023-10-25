@@ -22,7 +22,6 @@ public class PipeSpawner : MonoBehaviour
             timer = 0f;
             
         }
-        
     }
     //플레이어 x위치값을 반환하는 메소드
     public float Player_Posx(Vector3 player)
