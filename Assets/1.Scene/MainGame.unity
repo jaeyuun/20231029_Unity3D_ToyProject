@@ -545,6 +545,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1310575424}
   - component: {fileID: 1310575425}
+  - component: {fileID: 1310575426}
   m_Layer: 0
   m_Name: PipeSpawner
   m_TagString: Untagged
@@ -573,7 +574,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1310575423}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cdbb9bee41f1b6479d2a18f3147703d, type: 3}
   m_Name: 
@@ -583,6 +584,27 @@ MonoBehaviour:
   minY: 0
   maxY: 6
   plyaer: {fileID: 5411551631415214224}
+--- !u!114 &1310575426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310575423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2570e27bfd14b94983c74969802a5da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pipePrefab: {fileID: 7901770097505558708, guid: 52ea36e635e8ae94b894fd4f1f88b328, type: 3}
+  itemPrefabs:
+  - {fileID: 7370766973496366789, guid: 1af839f134d5c514192c1ed7586a22bf, type: 3}
+  - {fileID: 3935178836744281587, guid: 87c6bea6b94a0cc4981f9643fc6746fc, type: 3}
+  spawnRate: 0.8
+  minY: 0
+  maxY: 6
+  poolSize: 10
+  player: {fileID: 5411551631415214224}
 --- !u!1 &1347334998
 GameObject:
   m_ObjectHideFlags: 0
