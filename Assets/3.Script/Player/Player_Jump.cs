@@ -6,7 +6,7 @@ public class Player_Jump : MonoBehaviour
 {
     Rigidbody rigidbody;
     [SerializeField] private float Jump_P = 10f;
-
+    public float Sleep = 10f;
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -14,7 +14,7 @@ public class Player_Jump : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //rigidbody.AddForce(1f, 0f, 0f);
+        rigidbody.AddForce(Jump_P, 0f, 0f);
 
         if (Input.GetButton("Jump"))//스페이스키 입력시
         {
