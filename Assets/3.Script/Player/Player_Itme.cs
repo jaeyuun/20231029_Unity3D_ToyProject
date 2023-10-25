@@ -44,7 +44,7 @@ public class Player_Itme : MonoBehaviour
                 //capsuleCollider.enabled = false;
 
    
-                StartCoroutine(RestoreColor(2f));
+                StartCoroutine(OffiaGodmode(2f));
                 Debug.Log("복귀");
 
             }
@@ -53,7 +53,7 @@ public class Player_Itme : MonoBehaviour
 
                 transform.localScale = new Vector3(originalPlayer * 3f, originalPlayer * 3f, originalPlayer * 3f);
 
-                StartCoroutine(RestoreColor(4f));
+                StartCoroutine(OffisGiant(4f));
 
                 Debug.Log("복귀");
 
@@ -65,7 +65,7 @@ public class Player_Itme : MonoBehaviour
 
     }
 
-    private IEnumerator RestoreColor(float delay)
+    private IEnumerator OffiaGodmode(float delay)
     {
         yield return new WaitForSeconds(delay); // 지연
 
@@ -80,9 +80,28 @@ public class Player_Itme : MonoBehaviour
         //스케일 복구
         transform.localScale = new Vector3(originalPlayer, originalPlayer, originalPlayer);
         //is Giant, isGodmode false;
-        isGiant = false;
+       
         isGodmode = false;
     }
+
+    private IEnumerator OffisGiant(float delay)
+    {
+        yield return new WaitForSeconds(delay); // 지연
+
+        //Setbool로  walk가 false;
+
+        //SetTrigger idle로 true;
+
+        rigid.isKinematic = false;
+
+        //스피드 복구 
+        
+        //스케일 복구
+        transform.localScale = new Vector3(originalPlayer, originalPlayer, originalPlayer);
+        //is Giant, isGodmode false;
+        isGiant = false;
+       
+    }
     //2023-10-25 박준영 
-   
+
 }
