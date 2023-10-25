@@ -13,10 +13,9 @@ GameObject:
   - component: {fileID: 483434455090060552}
   - component: {fileID: 2200385687398771159}
   - component: {fileID: 2200385687398771158}
-  - component: {fileID: 4387937806747264072}
   m_Layer: 0
   m_Name: WallDown
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,22 +109,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &4387937806747264072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2200385687398771156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4430572fcc87e2b4f906dff72b725175, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2200385687444614383
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,7 +127,7 @@ GameObject:
   - component: {fileID: 2200385687444614382}
   m_Layer: 0
   m_Name: PipeExtras
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -235,7 +222,7 @@ GameObject:
   - component: {fileID: 7901770096938462930}
   m_Layer: 0
   m_Name: PipeExtras
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -329,10 +316,9 @@ GameObject:
   - component: {fileID: 7901770097161670258}
   - component: {fileID: 7901770097161670259}
   - component: {fileID: 7901770097161670268}
-  - component: {fileID: 5108903369292157813}
   m_Layer: 0
   m_Name: WallUp
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -426,22 +412,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &5108903369292157813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7901770097161670257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4430572fcc87e2b4f906dff72b725175, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7901770097505558708
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,12 +425,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7901770097505558711}
-<<<<<<< Updated upstream
   - component: {fileID: 7901770097505558709}
   - component: {fileID: 6978656967348151010}
-=======
-  - component: {fileID: -1306300726607348814}
->>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Wall
   m_TagString: Wall
@@ -480,7 +450,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
 --- !u!114 &7901770097505558709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,9 +463,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &6978656967348151010
-=======
---- !u!114 &-1306300726607348814
->>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -508,4 +474,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad165a5799d58bc459534a8a9b7d876f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: -10

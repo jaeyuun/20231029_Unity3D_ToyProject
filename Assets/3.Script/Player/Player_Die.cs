@@ -9,7 +9,8 @@ public class Player_Die : MonoBehaviour
         if(collision.gameObject.CompareTag("Wall"))//Wall Tag 접촉시
         {
             Die();
-          //  gameObject.SetActive(false);//Player 비활성화
+            Debug.Log("죽음");
+            gameObject.SetActive(false);//Player 비활성화
         }
     }
     public void Die()
