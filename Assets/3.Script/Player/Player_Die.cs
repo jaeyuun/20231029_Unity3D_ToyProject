@@ -14,12 +14,16 @@ public class Player_Die : MonoBehaviour
     private void OnCollisionEnter(Collision collision)//접촉 시 동작하는 메서드
     {
         if (collision.gameObject.CompareTag("Wall"))//Wall Tag 접촉시
-        {
-            if (!player.isGiant)
+        { 
+            //플레이어가 isGiant가 아니거나  isGodmode가 아니면 다이 
+            if (!player.isGiant && !player.isGodmode)
             {
+                Debug.Log(player.isGodmode);
                 Die();
                 gameObject.SetActive(false);//Player 비활성화
             }
+            //2023-10-25 박준영
+            
 
         }
     }
