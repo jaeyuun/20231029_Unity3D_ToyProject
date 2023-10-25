@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
     private CapsuleCollider capsuleCollider;
     private Rigidbody rigid;
     private Animator animator;
-
   
    
     private float originalPlayer;
@@ -34,7 +33,6 @@ public class Player : MonoBehaviour
             {
 
                 Debug.Log("충돌");
-
 
 
                 //Setbool로 walk가 true;
