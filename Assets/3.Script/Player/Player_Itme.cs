@@ -2,24 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player_Itme : MonoBehaviour
 {
-   
-
     private CapsuleCollider capsuleCollider;
     private Rigidbody rigid;
-    private Animator animator;
 
-  
-   
+
+    bool isGodmode;
+    public bool isGiant;
     private float originalPlayer;
 
     private void Start()
     {
-      
-        capsuleCollider  = GetComponent<CapsuleCollider>();
+
+        capsuleCollider = GetComponent<CapsuleCollider>();
         rigid = GetComponent<Rigidbody>();
-        animator = GetComponent<Animator>();
+
 
         originalPlayer = transform.localScale.x;
     }
@@ -27,8 +25,8 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Item"))
         {
-            bool isGodmode = other.gameObject.name.Contains("Godmode");
-            bool isGiant = other.gameObject.name.Contains("Giant");
+            isGodmode = other.gameObject.name.Contains("Godmode");
+            isGiant = other.gameObject.name.Contains("Giant");
 
             if (isGodmode)
             {
@@ -55,6 +53,7 @@ public class Player : MonoBehaviour
                 transform.localScale = new Vector3(originalPlayer * 3f, originalPlayer * 3f, originalPlayer * 3f);
 
                 StartCoroutine(RestoreColor(2f));
+
                 Debug.Log("복귀");
 
             }
@@ -79,6 +78,6 @@ public class Player : MonoBehaviour
         Debug.Log("돌아왔나?");
         // 다른 작업 수행 가능
         transform.localScale = new Vector3(originalPlayer, originalPlayer, originalPlayer);
-
+        isGiant = false;//자이언트 모드 false 
     }
 }

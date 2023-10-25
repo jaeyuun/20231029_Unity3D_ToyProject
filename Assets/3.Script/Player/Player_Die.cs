@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class Player_Die : MonoBehaviour
 {
+    private Player_Itme player;
+
+    private void Awake()
+    {
+        TryGetComponent(out player);
+    }
+
     private void OnCollisionEnter(Collision collision)//접촉 시 동작하는 메서드
     {
-        if(collision.gameObject.CompareTag("Wall"))//Wall Tag 접촉시
+        if (collision.gameObject.CompareTag("Wall"))//Wall Tag 접촉시
         {
-           // Die();
-            Debug.Log("죽음");
-           // gameObject.SetActive(false);//Player 비활성화
+            if (!player.isGiant)
+            {
+                Die();
+                gameObject.SetActive(false);//Player 비활성화
+            }
+
         }
     }
     public void Die()
