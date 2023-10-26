@@ -49,6 +49,9 @@ public class PipeSpawner_Pooling : MonoBehaviour
             int randomY = Random.Range(minY, maxY);
             GameObject pipeInstance = pipePool.Dequeue();
             pipeInstance.transform.position = new Vector3(Player_Posx(player.transform.position) + 30f, randomY, 0);
+            pipeInstance.transform.GetChild(0).GetComponent<Rigidbody>().isKinematic = true;
+            pipeInstance.transform.GetChild(1).GetComponent<Rigidbody>().isKinematic = true;
+
             pipeInstance.SetActive(true);
 
             pipePool.Enqueue(pipeInstance);
