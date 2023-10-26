@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class Player_Jump : MonoBehaviour
 {
-    Rigidbody rigidbody;
+    Rigidbody rigidbody;  
     [SerializeField] private float Jump_P = 10f;
     public float Sleep = 10f;
+
+    //Jump animation Add 
+    private Animator animator;
+    private bool isJump = false;
+
+    //Jump Audio Add
+    [SerializeField]private AudioSource audio;
+
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
+        audio = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -21,6 +31,16 @@ public class Player_Jump : MonoBehaviour
            
             rigidbody.AddForce(0f, Jump_P, 0f);//Jump_P만큼 힘을 준다
 
+            //isJump true _ Sujin
+            audio.Play();
+            isJump = true;            
+            animator.SetBool("isJump", true);
+
+        }
+        else 
+        {
+            isJump = false;
+            animator.SetBool("isJump", false);
         }
     }
 }
