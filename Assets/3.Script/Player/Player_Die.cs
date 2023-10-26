@@ -27,6 +27,19 @@ public class Player_Die : MonoBehaviour
 
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Wall"))
+        {
+            if (!player.isGiant && !player.isGodmode)
+            {
+                Die();
+                gameObject.SetActive(false);//Player 비활성화
+            }
+        }
+    }
+
     public void Die()
     {
         if (GameManager.FindObjectOfType<GameManager>().TryGetComponent(out GameManager gm))//죽었을 때 R키를 누르시오 
