@@ -10,8 +10,13 @@ public class Item_Active : MonoBehaviour
     private Player_Move player_move;
     private Animator animator;
 
+    [SerializeField] private AudioSource audioSource;
+    public AudioClip giant;
+    public AudioClip godmode;
 
-    public  bool isGodmode;
+
+
+    public bool isGodmode;
     public bool isGiant;
     private float originalPlayer;
 
@@ -22,6 +27,7 @@ public class Item_Active : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
         player_move = GetComponent < Player_Move>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         originalPlayer = transform.localScale.x;
     }
     private void OnTriggerEnter(Collider other)
@@ -40,12 +46,13 @@ public class Item_Active : MonoBehaviour
                 //animator.SetBool("walk", true);
 
                 //플레이어 속도 증가 
-                player_move.Speed = 40f;
+                player_move.Speed = 30f;
+                audioSource.PlayOneShot(godmode);
 
                 //rigid.isKinematic = true;
                 //capsuleCollider.enabled = false;
 
-   
+
                 StartCoroutine(OffiaGodmode(2f));
                 Debug.Log("복귀");
 
@@ -54,7 +61,7 @@ public class Item_Active : MonoBehaviour
             {
 
                 transform.localScale = new Vector3(originalPlayer * 3f, originalPlayer * 3f, originalPlayer * 3f);
-
+                audioSource.PlayOneShot(giant);
                 StartCoroutine(OffisGiant(4f));
 
                 Debug.Log("복귀");
@@ -78,7 +85,8 @@ public class Item_Active : MonoBehaviour
        
         //스피드 복구 
         player_move.Speed = 7f;
-       
+        audioSource.Stop();
+
         isGodmode = false;
     }
 
