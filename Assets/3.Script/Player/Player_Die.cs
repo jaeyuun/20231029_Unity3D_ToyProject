@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Player_Die : MonoBehaviour
 {
-    private Player_Itme player;
-
+    private Item_Active player;
+   
     private void Awake()
     {
         TryGetComponent(out player);

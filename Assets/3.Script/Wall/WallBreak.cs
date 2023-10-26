@@ -14,7 +14,7 @@ public class WallBreak : MonoBehaviour
     // [JaeYun] WallBreak: 벽이 무적상태의 플레이어와 닿았을 때 사용
     private void OnCollisionEnter(Collision collision)
     {     //플레이어가 isGiant 거나 isGodmode일 때 isKinematic false 되게 
-        if (collision.gameObject.CompareTag("Player") && (player.transform.GetComponent<Player_Itme>().isGiant || player.transform.GetComponent<Player_Itme>().isGodmode))
+        if (collision.gameObject.CompareTag("Player") && (player.transform.GetComponent<Item_Active>().isGiant || player.transform.GetComponent<Item_Active>().isGodmode))
         {
             gameObject.GetComponent<Rigidbody>().isKinematic = false;
             ExcecuteBounding(collision); // player collision
