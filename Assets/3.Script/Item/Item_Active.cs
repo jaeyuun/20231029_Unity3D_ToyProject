@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Itme : MonoBehaviour
+public class Item_Active : MonoBehaviour
 {
     private CapsuleCollider capsuleCollider;
     private Rigidbody rigid;
     // 플레이어 속도 불러오기 
-    private Player_Move map_Move;
+    private Player_Move player_move;
+    private Animator animator;
 
 
     public  bool isGodmode;
@@ -19,8 +20,8 @@ public class Player_Itme : MonoBehaviour
 
         capsuleCollider = GetComponent<CapsuleCollider>();
         rigid = GetComponent<Rigidbody>();
-        map_Move = GetComponent < Player_Move>();
-
+        player_move = GetComponent < Player_Move>();
+        animator = GetComponent<Animator>();
         originalPlayer = transform.localScale.x;
     }
     private void OnTriggerEnter(Collider other)
@@ -36,9 +37,10 @@ public class Player_Itme : MonoBehaviour
                 Debug.Log("충돌");
 
                 //Setbool로 walk가 true;
+                //animator.SetBool("walk", true);
 
                 //플레이어 속도 증가 
-                map_Move.Speed += 40.0f;
+                player_move.Speed += 40.0f;
 
                 //rigid.isKinematic = true;
                 //capsuleCollider.enabled = false;
@@ -70,13 +72,12 @@ public class Player_Itme : MonoBehaviour
         yield return new WaitForSeconds(delay); // 지연
 
         //Setbool로  walk가 false;
-
-        //SetTrigger idle로 true;
-
+        //animator.SetBool("walk", false);
+      
         rigid.isKinematic = false;
        
         //스피드 복구 
-        map_Move.Speed -= 40.0f;
+        player_move.Speed -= 40.0f;
         //스케일 복구
         transform.localScale = new Vector3(originalPlayer, originalPlayer, originalPlayer);
         //is Giant, isGodmode false;
@@ -88,20 +89,14 @@ public class Player_Itme : MonoBehaviour
     {
         yield return new WaitForSeconds(delay); // 지연
 
-        //Setbool로  walk가 false;
-
-        //SetTrigger idle로 true;
-
         rigid.isKinematic = false;
 
-        //스피드 복구 
-        
         //스케일 복구
         transform.localScale = new Vector3(originalPlayer, originalPlayer, originalPlayer);
         //is Giant, isGodmode false;
         isGiant = false;
        
     }
-    //2023-10-25 박준영 
+    //2023-10-26 박준영 
 
 }
