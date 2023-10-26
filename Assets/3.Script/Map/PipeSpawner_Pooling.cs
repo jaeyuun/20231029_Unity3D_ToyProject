@@ -58,7 +58,7 @@ public class PipeSpawner_Pooling : MonoBehaviour
 
             // 아이템 생성
             float itemSpawnChance = Random.Range(0f, 1f);
-            if (itemSpawnChance <= 0.2f) // 50% 확률로 아이템 생성
+            if (itemSpawnChance <= 0.15f) // 50% 확률로 아이템 생성
             {
                 int randomItemIndex = Random.Range(0, itemPrefabs.Length);
                 Queue<GameObject> itemPool = itemPools[randomItemIndex];

@@ -40,7 +40,7 @@ public class Item_Active : MonoBehaviour
                 //animator.SetBool("walk", true);
 
                 //플레이어 속도 증가 
-                player_move.Speed += 40.0f;
+                player_move.Speed = 40f;
 
                 //rigid.isKinematic = true;
                 //capsuleCollider.enabled = false;
@@ -77,10 +77,7 @@ public class Item_Active : MonoBehaviour
         rigid.isKinematic = false;
        
         //스피드 복구 
-        player_move.Speed -= 40.0f;
-        //스케일 복구
-        transform.localScale = new Vector3(originalPlayer, originalPlayer, originalPlayer);
-        //is Giant, isGodmode false;
+        player_move.Speed = 7f;
        
         isGodmode = false;
     }
