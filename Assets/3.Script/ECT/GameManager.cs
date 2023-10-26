@@ -12,13 +12,28 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Text RecordText;
 
+    [SerializeField] private GameObject[] player;
+
     private float time;
     private bool isGameover;
 
     private void Start()
     {
+        
         time = 0;
         isGameover = false;
+        switch (PlayerPrefs.GetInt("Character"))
+        {
+            case 0:
+                player[0].SetActive(true);
+                break;
+            case 1:
+                player[1].SetActive(true);
+                break;
+            case 2:
+                player[2].SetActive(true);
+                break;
+        }
 
     }
     private void Update()
