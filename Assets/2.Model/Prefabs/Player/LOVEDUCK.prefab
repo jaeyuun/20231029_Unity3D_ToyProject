@@ -1333,8 +1333,8 @@ GameObject:
   - component: {fileID: 6637787753237959138}
   - component: {fileID: 6637787753237959137}
   - component: {fileID: 6637787753237959142}
-  - component: {fileID: 6637787753237959139}
   - component: {fileID: 6637787753237959136}
+  - component: {fileID: 3488603433406615552}
   m_Layer: 0
   m_Name: LOVEDUCK
   m_TagString: Player
@@ -1448,20 +1448,6 @@ MonoBehaviour:
   Jump_P: 90
   Sleep: 10
   audio: {fileID: 6637787753237959136}
---- !u!114 &6637787753237959139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6637787753237959141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ec7e5ef85553924a96f5e2d91d589f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isGodmode: 0
-  isGiant: 0
 --- !u!82 &6637787753237959136
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1558,3 +1544,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3488603433406615552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6637787753237959141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 464c4c210aa34724dba78fdffb841177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGodmode: 0
+  isGiant: 0
