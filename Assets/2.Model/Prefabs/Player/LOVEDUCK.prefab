@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 1100655767365499484}
   - component: {fileID: 1100655767358096418}
   - component: {fileID: 1100655767358096417}
+  - component: {fileID: 7147909746741888453}
   - component: {fileID: 1100655767358096423}
   - component: {fileID: 1100655767358096420}
   - component: {fileID: 1100655767358096419}
-  - component: {fileID: 7147909746741888453}
   - component: {fileID: 8527129559121001477}
   m_Layer: 0
   m_Name: LOVEDUCK
@@ -92,6 +92,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
+--- !u!114 &7147909746741888453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100655767358096416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 464c4c210aa34724dba78fdffb841177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  giant: {fileID: 8300000, guid: 0566c468b77d40d4d91e578e90502d59, type: 3}
+  godmode: {fileID: 8300000, guid: 36dbb6741cdc4164eb9c17ae34482731, type: 3}
+  isGodmode: 0
+  isGiant: 0
+  speedEffect: {fileID: 8474480255827624348}
+  GiantEffect: {fileID: 5872899061811746145}
 --- !u!114 &1100655767358096423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,25 +152,6 @@ MonoBehaviour:
   audio: {fileID: 0}
   Jump_S: {fileID: 8300000, guid: d703d3cbee68b16459147641178e629c, type: 3}
   jumpEffect: {fileID: 100000, guid: 83cd9cc9f9c88824ba18dc59b05ae328, type: 3}
---- !u!114 &7147909746741888453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1100655767358096416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 464c4c210aa34724dba78fdffb841177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  giant: {fileID: 8300000, guid: 0566c468b77d40d4d91e578e90502d59, type: 3}
-  godmode: {fileID: 8300000, guid: 36dbb6741cdc4164eb9c17ae34482731, type: 3}
-  isGodmode: 0
-  isGiant: 0
-  speedEffect: {fileID: 8474480255827624348}
-  GiantEffect: {fileID: 5872899061811746145}
 --- !u!82 &8527129559121001477
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1584,7 +1584,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5878720314173217939
 Transform:
   m_ObjectHideFlags: 0
