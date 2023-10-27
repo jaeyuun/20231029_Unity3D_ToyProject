@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     private float time = 0;
     private bool isGameover = false;
-    private int playerCode; // ÇÃ·¹ÀÌ¾î ¼±ÅÃÇßÀ» ¶§ ³Ñ¾î¿À´Â Character ÄÚµå
+    private int playerCode; // Ã‡ÃƒÂ·Â¹Ã€ÃŒÂ¾Ã® Â¼Â±Ã…ÃƒÃ‡ÃŸÃ€Â» Â¶Â§ Â³Ã‘Â¾Ã®Â¿Ã€Â´Ã‚ Character Ã„ÃšÂµÃ¥
 
     private void Start()
     {
@@ -28,13 +28,13 @@ public class GameManager : MonoBehaviour
     {
         if (!isGameover)
         {
-            //½Ã°£ 
+            //Â½ÃƒÂ°Â£ 
             time += Time.deltaTime;
             TimeText.text = $"Score :{(int)time}";
         }
         else
         {
-            //Àç½ÃÀÛ
+            //Ã€Ã§Â½ÃƒÃ€Ã›
             if (Input.GetKeyDown(KeyCode.R))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -53,10 +53,10 @@ public class GameManager : MonoBehaviour
         {
             BestScore = time;
             PlayerPrefs.SetFloat("bestScore", BestScore);
-            PlayerPrefs.SetInt($"Player{playerCode}", (int)BestScore); // ÇÃ·¹ÀÌ¾î ÄÚµå¿¡ µû¸¥ Á¡¼ö ÀúÀå
+            PlayerPrefs.SetInt($"Player{playerCode}", (int)BestScore); // Ã‡ÃƒÂ·Â¹Ã€ÃŒÂ¾Ã® Ã„ÃšÂµÃ¥Â¿Â¡ ÂµÃ»Â¸Â¥ ÃÂ¡Â¼Ã¶ Ã€ÃºÃ€Ã¥
         }
 
-        // RecordText.text = $"ÃÖ°í±â·Ï :{(int)BestScore}";
+        // RecordText.text = $"ÃƒÃ–Â°Ã­Â±Ã¢Â·Ã :{(int)BestScore}";
         List<int> playerScore = new List<int>();
         for (int i = 0; i < 3; i++)
         {
@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
             for (int j = 0; j < playerScore.Count; j++)
             {
                 if (playerScore[i] < playerScore[j])
-                { // playerScore ºñ±³
+                { // playerScore ÂºÃ±Â±Â³
                     temp = playerScore[i];
                     playerScore[i] = playerScore[j];
                     playerScore[j] = temp;
@@ -81,10 +81,10 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        string bestText = "ÃÖ°í±â·Ï\n";
+        string bestText = "ÃƒÃ–Â°Ã­Â±Ã¢Â·Ã\n";
         for (int i = 0; i < playerScore.Count; i++)
         {
-            bestText += $"{i}µî {playerScore[i]}\n";
+            bestText += $"{i}ÂµÃ® {playerScore[i]}\n";
         }
 
         RecordText.text = bestText;
