@@ -9,7 +9,7 @@ public class PipeSpawner_Pooling : MonoBehaviour
     public float spawnRate = 2f;
     public float difficulty = 0;
     public int minY, maxY;
-    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject[] player;
 
     private float timer = 0f;
 
@@ -23,7 +23,7 @@ public class PipeSpawner_Pooling : MonoBehaviour
         {
             int randomY = Random.Range(minY, maxY);
             GameObject pipeInstance = Instantiate(pipePrefabs[Random.Range(0, pipePrefabs.Length)]);
-            pipeInstance.transform.position = new Vector3(Player_Posx(player.transform.position) + 30f, randomY, 0);
+            pipeInstance.transform.position = new Vector3(Player_Posx(player[PlayerPrefs.GetInt("Character")].transform.position) + 30f, randomY, 0);
 
             pipeInstance.SetActive(true);
 

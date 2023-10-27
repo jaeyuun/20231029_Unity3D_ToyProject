@@ -20,20 +20,12 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         
-        time = 0;
+        //time = 0;
         isGameover = false;
-        switch (PlayerPrefs.GetInt("Character"))
-        {
-            case 0:
-                player[0].SetActive(true);
-                break;
-            case 1:
-                player[1].SetActive(true);
-                break;
-            case 2:
-                player[2].SetActive(true);
-                break;
-        }
+
+        Debug.Log(PlayerPrefs.GetInt("Character"));
+        player[PlayerPrefs.GetInt("Character")].SetActive(true);
+        
 
     }
     private void Update()
