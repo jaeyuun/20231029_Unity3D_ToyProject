@@ -28,13 +28,13 @@ public class GameManager : MonoBehaviour
     {
         if (!isGameover)
         {
-            //½Ã°£ 
+          
             time += Time.deltaTime;
             TimeText.text = $"Score :{(int)time}";
         }
         else
         {
-            //Àç½ÃÀÛ
+            
             if (Input.GetKeyDown(KeyCode.R))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -53,10 +53,10 @@ public class GameManager : MonoBehaviour
         {
             BestScore = time;
             PlayerPrefs.SetFloat("bestScore", BestScore);
-            PlayerPrefs.SetInt($"Player{playerCode}", (int)BestScore); // ÇÃ·¹ÀÌ¾î ÄÚµå¿¡ µû¸¥ Á¡¼ö ÀúÀå
+            PlayerPrefs.SetInt($"Player{playerCode}", (int)BestScore);
         }
 
-        // RecordText.text = $"ÃÖ°í±â·Ï :{(int)BestScore}";
+      
         List<int> playerScore = new List<int>();
         for (int i = 0; i < 3; i++)
         {
@@ -81,10 +81,10 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        string bestText = "ÃÖ°í±â·Ï\n";
+        string bestText = "최고기록\n";
         for (int i = 0; i < playerScore.Count; i++)
         {
-            bestText += $"{i}µî {playerScore[i]}\n";
+            bestText += $"{i}등 {playerScore[i]}\n";
         }
 
         RecordText.text = bestText;
