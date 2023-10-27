@@ -15,6 +15,8 @@ public class Player_Jump : MonoBehaviour
     [SerializeField]private AudioSource audio;
     public AudioClip Jump_S;
 
+    [SerializeField] private GameObject jumpEffect;
+
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -36,6 +38,7 @@ public class Player_Jump : MonoBehaviour
             isJump = true;            
             animator.SetBool("isJump", true);
 
+            Instantiate(jumpEffect, transform.position, jumpEffect.transform.rotation);
         }
         else 
         {

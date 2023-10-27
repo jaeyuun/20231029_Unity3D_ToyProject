@@ -20,6 +20,13 @@ public class Item_Active : MonoBehaviour
     public bool isGiant;
     private float originalPlayer;
 
+    //walk _Sujin
+    private bool iswalk;
+
+    //particle
+    [SerializeField] private GameObject speedEffect;
+    [SerializeField] private GameObject GiantEffect;
+
     private void Start()
     {
 
@@ -44,10 +51,18 @@ public class Item_Active : MonoBehaviour
 
                 //Setbool로 walk가 true;
                 //animator.SetBool("walk", true);
+                iswalk = true;
+                animator.SetBool("isWalk", true);
+
+                //Particle_Sujin
+                //Instantiate(speedEffect, transform.position, speedEffect.transform.rotation);
+                speedEffect.SetActive(true);
 
                 //플레이어 속도 증가 
                 player_move.Speed = 30f;
                 audioSource.PlayOneShot(godmode);
+
+
 
                 //rigid.isKinematic = true;
                 //capsuleCollider.enabled = false;
@@ -59,6 +74,7 @@ public class Item_Active : MonoBehaviour
             }
             if (isGiant)
             {
+                GiantEffect.SetActive(true);
 
                 transform.localScale = new Vector3(originalPlayer * 3f, originalPlayer * 3f, originalPlayer * 3f);
                 audioSource.PlayOneShot(giant);
@@ -88,6 +104,8 @@ public class Item_Active : MonoBehaviour
         audioSource.Stop();
 
         isGodmode = false;
+
+        speedEffect.SetActive(false);
     }
 
     private IEnumerator OffisGiant(float delay)
@@ -100,7 +118,9 @@ public class Item_Active : MonoBehaviour
         transform.localScale = new Vector3(originalPlayer, originalPlayer, originalPlayer);
         //is Giant, isGodmode false;
         isGiant = false;
-       
+
+        GiantEffect.SetActive(true);
+
     }
     //2023-10-26 박준영 
 
