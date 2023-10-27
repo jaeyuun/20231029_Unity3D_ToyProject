@@ -1515,10 +1515,6 @@ MonoBehaviour:
   GameoverText: {fileID: 1732998882}
   TimeText: {fileID: 610453476}
   RecordText: {fileID: 1415455033}
-  player:
-  - {fileID: 8131625594967290249}
-  - {fileID: 1100655766647129862}
-  - {fileID: 2655445151924023400}
 --- !u!4 &1148666687
 Transform:
   m_ObjectHideFlags: 0

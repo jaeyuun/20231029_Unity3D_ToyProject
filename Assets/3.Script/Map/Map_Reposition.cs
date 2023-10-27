@@ -10,7 +10,10 @@ public class Map_Reposition : MonoBehaviour
     private float spawnX = 300.0f;
     private int lastPrefabIndex = 0;
 
-
+    private void Start()
+    {
+        PlayerPrefabs[PlayerPrefs.GetInt("Character")].SetActive(true);
+    }
 
     private void Update()
     {
