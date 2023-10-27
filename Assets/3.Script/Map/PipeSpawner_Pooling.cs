@@ -4,74 +4,70 @@ using UnityEngine;
 
 public class PipeSpawner_Pooling : MonoBehaviour
 {
-    public GameObject pipePrefab;
+    public GameObject[] pipePrefabs;
     public GameObject[] itemPrefabs;
-    public float spawnRate = 1f;
+    public float spawnRate = 2f;
+    public float difficulty = 0;
     public int minY, maxY;
-    public int poolSize = 10;
     [SerializeField] private GameObject player;
 
     private float timer = 0f;
-    private Queue<GameObject> pipePool;
-    private List<Queue<GameObject>> itemPools;
-
-    void Start()
-    {
-        pipePool = new Queue<GameObject>();
-        itemPools = new List<Queue<GameObject>>();
-
-        for (int i = 0; i < poolSize; i++)
-        {
-            GameObject pipeInstance = Instantiate(pipePrefab);
-            pipeInstance.SetActive(false);
-            pipePool.Enqueue(pipeInstance);
-        }
-
-        foreach (GameObject itemPrefab in itemPrefabs)
-        {
-            Queue<GameObject> itemPool = new Queue<GameObject>();
-            for (int i = 0; i < poolSize; i++)
-            {
-                GameObject itemInstance = Instantiate(itemPrefab);
-                itemInstance.SetActive(false);
-                itemPool.Enqueue(itemInstance);
-            }
-            itemPools.Add(itemPool);
-        }
-    }
 
     void Update()
     {
         timer += Time.deltaTime;
+        difficulty += Time.deltaTime;
 
+        Stage(difficulty);
         if (timer >= spawnRate)
         {
             int randomY = Random.Range(minY, maxY);
-            GameObject pipeInstance = pipePool.Dequeue();
+            GameObject pipeInstance = Instantiate(pipePrefabs[Random.Range(0, pipePrefabs.Length)]);
             pipeInstance.transform.position = new Vector3(Player_Posx(player.transform.position) + 30f, randomY, 0);
-            pipeInstance.transform.GetChild(0).GetComponent<Rigidbody>().isKinematic = true;
-            pipeInstance.transform.GetChild(1).GetComponent<Rigidbody>().isKinematic = true;
 
             pipeInstance.SetActive(true);
 
-            pipePool.Enqueue(pipeInstance);
+            Destroy(pipeInstance, 10f);  // 10초 후에 파괴
 
             // 아이템 생성
             float itemSpawnChance = Random.Range(0f, 1f);
-            if (itemSpawnChance <= 0.15f) // 50% 확률로 아이템 생성
+            if (itemSpawnChance <= 0.15f) // 15% 확률로 아이템 생성
             {
-                int randomItemIndex = Random.Range(0, itemPrefabs.Length);
-                Queue<GameObject> itemPool = itemPools[randomItemIndex];
-                GameObject itemInstance = itemPool.Dequeue();
+                GameObject itemInstance = Instantiate(itemPrefabs[Random.Range(0, itemPrefabs.Length)]);
                 int itemY = Random.Range(minY + 2, maxY - 2); // 아이템의 높이를 파이프 사이에 위치하도록 설정
                 itemInstance.transform.position = new Vector3(pipeInstance.transform.position.x, itemY, 0);
                 itemInstance.SetActive(true);
-                itemPool.Enqueue(itemInstance);
+
+                Destroy(itemInstance, 10f);  // 10초 후에 파괴
             }
 
             timer = 0f;
         }
     }
+    private void Stage(float Stage_time)
+    {
+        if (Stage_time > 10)
+        {
+            spawnRate = 1.5f;
+        }
+        if (Stage_time > 20)
+        {
+            spawnRate = 1f;
+        }
+        if (Stage_time > 30)
+        {
+            spawnRate = 0.8f;
+        }
+        if (Stage_time > 50)
+        {
+            spawnRate = 0.5f;
+        }
+        if (Stage_time > 60)
+        {
+            spawnRate = 0.3f;
+        }
+    }
+
 
     public float Player_Posx(Vector3 player)
     {
