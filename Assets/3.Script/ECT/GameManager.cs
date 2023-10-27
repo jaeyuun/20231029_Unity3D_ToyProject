@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     private float time = 0;
     private bool isGameover = false;
-    private int playerCode; // ÇÃ·¹ÀÌ¾î ¼±ÅÃÇßÀ» ¶§ ³Ñ¾î¿À´Â Character ÄÚµå
+    private int playerCode;
 
     private void Start()
     {
@@ -30,14 +30,14 @@ public class GameManager : MonoBehaviour
         {
           
             time += Time.deltaTime;
-            TimeText.text = $"Score :{(int)time}";
+            TimeText.text = $"Score : {(int)time}";
         }
         else
         {
             
             if (Input.GetKeyDown(KeyCode.R))
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                SceneManager.LoadScene("Intro");
             }
         }
     }
@@ -53,27 +53,26 @@ public class GameManager : MonoBehaviour
         {
             BestScore = time;
             PlayerPrefs.SetFloat("bestScore", BestScore);
-            PlayerPrefs.SetInt($"Player{playerCode}", (int)BestScore);
-        }
-
-      
-        List<int> playerScore = new List<int>();
-        for (int i = 0; i < 3; i++)
-        {
-            if (PlayerPrefs.HasKey($"Player{i}"))
-            {
-                playerScore.Add(PlayerPrefs.GetInt($"Player{playerCode}"));
-            }
+            PlayerPrefs.SetInt($"Player{playerCode}", (int)time);
         }
 
         int temp = 0;
-        string[] bestRecord = { string.Empty };
-        for (int i = 0; i < playerScore.Count; i++)
+        int playerCount = 0;
+        int[] playerScore = { 0 };
+
+        for (int i = 0; i < 3; i++)
         {
-            for (int j = 0; j < playerScore.Count; j++)
+            if (PlayerPrefs.HasKey($"Player{i}")) {
+                playerCount++;
+                playerScore[i] = PlayerPrefs.GetInt($"Player{i}");
+            }
+        }
+        for (int i = 0; i < playerCount; i++)
+        {
+            for (int j = 0; j < playerCount; j++)
             {
-                if (playerScore[i] < playerScore[j])
-                { // playerScore ºñ±³
+                if (PlayerPrefs.GetInt($"Player{i}") < PlayerPrefs.GetInt($"Player{j}"))
+                { // playerScore 비교
                     temp = playerScore[i];
                     playerScore[i] = playerScore[j];
                     playerScore[j] = temp;
@@ -81,10 +80,14 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        string bestText = "최고기록\n";
-        for (int i = 0; i < playerScore.Count; i++)
+        string bestText = $"최고기록\n{PlayerPrefs.GetInt($"Player{playerCode}")}";
+        for (int i = 0; i < playerScore.Length; i++)
         {
-            bestText += $"{i}등 {playerScore[i]}\n";
+            if (playerScore[i] == 0)
+            {
+                continue;
+            }
+            bestText += $"\n{i + 1}등 {playerScore[i]}\n";
         }
 
         RecordText.text = bestText;
