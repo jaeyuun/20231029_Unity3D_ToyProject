@@ -2023,8 +2023,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pipePrefabs:
-  - {fileID: 3351247469614585528, guid: 201d8db9985d64742bec1abe3366fe23, type: 3}
-  - {fileID: 3351247469614585528, guid: 201d8db9985d64742bec1abe3366fe23, type: 3}
+  - {fileID: 7901770097505558708, guid: 52ea36e635e8ae94b894fd4f1f88b328, type: 3}
+  - {fileID: 5537325495990483187, guid: 6801d478d495b0c4fb15a90a314a9812, type: 3}
   - {fileID: 7901770097505558708, guid: 52ea36e635e8ae94b894fd4f1f88b328, type: 3}
   - {fileID: 7901770097505558708, guid: 52ea36e635e8ae94b894fd4f1f88b328, type: 3}
   - {fileID: 7901770097505558708, guid: 52ea36e635e8ae94b894fd4f1f88b328, type: 3}
