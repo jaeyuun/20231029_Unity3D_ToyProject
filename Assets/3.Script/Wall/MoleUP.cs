@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoleUP_Test : MonoBehaviour
+public class MoleUP : MonoBehaviour
 {
     float PosY;
     private void FixedUpdate()

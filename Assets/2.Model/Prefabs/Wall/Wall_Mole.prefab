@@ -1022,7 +1022,7 @@ GameObject:
   - component: {fileID: 1382377873006111562}
   - component: {fileID: 5657872577497803659}
   - component: {fileID: 5657872577497803656}
-  - component: {fileID: 7087132967004610668}
+  - component: {fileID: 9100524673489118474}
   m_Layer: 0
   m_Name: Free Burrow
   m_TagString: Wall
@@ -1098,7 +1098,7 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!114 &7087132967004610668
+--- !u!114 &9100524673489118474
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
