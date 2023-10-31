@@ -1,5 +1,6 @@
 # 🐥 FlappyBird
-KGA Unity3D ToyProject 1팀 사합지조 작품입니다. 파이프를 피하여 오랫동안 비행하면서 살아남는 Flappy Bird 게임입니다.
+KGA Unity3D ToyProject 1팀 사합지조 작품입니다.   
+파이프를 피하여 오랫동안 비행하면서 살아남는 Flappy Bird 게임입니다.
 ### 개발 기간   
 2023/10/27 ~ 2023/10/29
 ### 사합지조 팀
