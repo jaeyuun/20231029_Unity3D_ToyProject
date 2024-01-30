@@ -4,7 +4,7 @@
 ### Unity 3D TeamProject
 #### 1. 제작 기간
 2023/10/27 ~ 2023/10/29
-#### 2. 참여 인원 (2인)
+#### 2. 참여 인원 (4인)
 - 김민호 ([BANIKIM](https://github.com/BANIKIM))
   > 맵 관리
 - 박수진 ([Sujiii1](https://github.com/Sujiii1))
